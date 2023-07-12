@@ -40,8 +40,8 @@ https://arxiv.org/pdf/1808.04945.pdf
 1. Create a (conda) virtual environment (e.g., `conda create -n pid python
    r-base r-essentials`).
 2. To preprocess MTX data and run or compile experiments, install Python
-   requirements from `requirements.txt` (e.g., `pip install -r 
-   requirements.txt`).
+   requirements from `requirements.txt` (e.g., `conda install -y --file 
+   requirements.txt -c conda-forge`).
 3. To be able to run the estimation code, install R requirements with `Rscript
    requirements.R`.
 
