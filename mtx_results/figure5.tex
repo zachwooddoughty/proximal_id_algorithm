@@ -1,0 +1,104 @@
+\documentclass[crop,tikz]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\usetikzlibrary{patterns, shapes.geometric, positioning, bayesnet}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=newest}
+\pgfplotsset{filter discard warning=false}
+
+\definecolor{colorblind0}{RGB}{1,115,178}
+\definecolor{colorblind1}{RGB}{222,143,5}
+\definecolor{colorblind2}{RGB}{2,158,115}
+\definecolor{colorblind3}{RGB}{213,94,0}
+\definecolor{colorblind4}{RGB}{204,120,188}
+\definecolor{colorblind5}{RGB}{202,145,97}
+\definecolor{colorblind6}{RGB}{251,175,228}
+
+\newcommand{\regionplot}[4]{
+\addplot [ 
+  #2, mark color={#2},
+  mark=none, line legend,
+  thick,
+  ] table [
+  x=n,
+  y=est,
+  ] {#1};
+\addlegendentry{#3}
+\addplot [name path=upper, draw=none, forget plot]
+  table[x=n,y=p97.5] {#1};
+\addplot [name path=lower, draw=none, forget plot]
+  table[x=n, y=p2.5] {#1};
+\addplot [
+  preaction={fill=#2!40, opacity=0.3}, pattern={#4},
+  opacity=0.1, forget plot]
+  fill between[of=upper and lower];
+}
+
+\newcommand{\threelineplot}[3]{
+\addplot [ 
+  #2, mark color={#2},
+  mark=none, line legend,
+  very thick,
+  ] table [
+  x=n,
+  y=est,
+  ] {#1};
+\addlegendentry{#3}
+\addplot [name path=upper, dashed, #2, mark=none, forget plot]
+  table[x=n,y=p97.5] {#1};
+\addplot [name path=lower, dashed, #2, mark=none, forget plot]
+  table[x=n, y=p2.5] {#1};
+}
+
+\newcommand{\errorbarsplot}[3]{
+\addplot plot [
+  only marks,
+  line width=2pt,
+  error bars/.cd,
+  y dir=both, y explicit,
+  error bar style={
+      line width=2pt,
+  },
+  error mark options={
+      line width=3pt
+  },
+] table [
+  x expr=\thisrow{n} + #2,
+  y=est,
+  y error minus expr=\thisrow{est} - \thisrow{p2.5},
+  y error plus expr=\thisrow{p97.5} - \thisrow{est},
+] {#1};
+\addlegendentry{#3};
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+\begin{axis}[
+xlabel={$A$},
+ylabel={$E[Y(a)]$},
+label style={scale=1.5},
+ticklabel style={scale=1.5},
+width=20cm,
+height=10cm,
+xmin=-0.5,
+xmax=6.5,
+ytick pos=left,
+xtick pos=left,
+xtick={-0.2,0.2,0.8,1.2,1.8,2.2,2.8,3.2,3.8,4.2,4.8,5.2,5.8,6.2},
+xticklabels={0,,1,,2,,3,,4,,5,,6},
+x tick label as interval=true,
+legend style={ nodes={scale=1.0, transform shape},
+              cells={anchor=west}, legend pos=south west,},
+]
+
+\addplot [mark=none, forget plot]
+coordinates {(-0.5,0) (6.5,0)};
+\errorbarsplot{naive_frontdoor_cat_256.dat}{-0.1}{Naive Front-door}
+\errorbarsplot{simple_proximal_cat_256.dat}{0}{Simple Proximal}
+\errorbarsplot{proximal_frontdoor_cat_256.dat}{0.1}{Proximal Front-door}
+
+\end{axis}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,8 @@
+// {"sample_sizes":["4000,16000,64000"],"m_bin":[false],"z_bin":[false],"ay_effect":["NA"],"uz_effect":["NA"],"uw_effect":["NA"],"zmw_effect":["NA"],"save":[true],"n_bootstrap":[1],"n_datasets":[4],"n_dgps":[1],"dgp_start":[4],"dataset_start":[45],"outdir":["results/"]}
+// {"ubeta":[0.3432],"mbeta":[-0.3376,-0.1796,1.8842,0.336],"wbeta":[0.8976,1.6244,1.7962,-1.7074],"abeta":[1.0187,-0.856,-1.5998,1.8163],"ybeta":[1.8488,1.0468,0.858,1.9865,0.0251,-0.0402],"zbeta":[-0.8905,1.2543,-0.9583],"cbeta":[-1.9642,-0.825],"sd_":[1],"true_effect":[0.682]}
+method,estimate
+truth,0.681970858421094
+backdoor,-0.000854639042299432
+naive,-1.02368742618523
+simple,0.402077101984179
+pfd,-0.000932265764143181

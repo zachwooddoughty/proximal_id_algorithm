@@ -1,0 +1,9 @@
+[1] "Treatment distribution 0 = 826, Treatment distribution 1 = 8, Treatment distribution 2 = 12, Treatment distribution 3 = 2, Treatment distribution 4 = 9, Treatment distribution 5 = 30, Treatment distribution 6 = 123"
+[1] "prox front: -0.115, -0.142, -0.17, -0.205, -0.241, -0.277, -0.316"
+[1] "causal eff:  0, -0.027, -0.055, -0.09, -0.126, -0.162, -0.201"
+           0      1      2      3      4      5      6
+2.5%  -0.357 -0.333 -0.360 -0.511 -0.651 -0.836 -1.018
+97.5%  0.179  0.035 -0.022 -0.017  0.046  0.119  0.182
+      0      1      2      3      4      5      6
+2.5%  0 -0.172 -0.348 -0.529 -0.711 -0.897 -1.085
+97.5% 0  0.077  0.141  0.221  0.290  0.372  0.431

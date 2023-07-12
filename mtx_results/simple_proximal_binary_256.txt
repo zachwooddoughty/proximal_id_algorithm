@@ -1,0 +1,9 @@
+[1] "Treatment distribution 0 = 887, Treatment distribution 1 = 123"
+[1] "simple prox: -0.171, -0.908"
+[1] "causal eff:  0, -0.737"
+           0      1
+2.5%  -0.240 -1.290
+97.5% -0.103 -0.608
+      0      1
+2.5%  0 -1.144
+97.5% 0 -0.392

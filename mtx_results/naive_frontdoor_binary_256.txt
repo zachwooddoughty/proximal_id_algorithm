@@ -1,0 +1,9 @@
+[1] "Treatment distribution 0 = 887, Treatment distribution 1 = 123"
+[1] "naive front: -0.155, -0.137"
+[1] "causal eff:  0, 0.017"
+           0      1
+2.5%  -0.270 -0.251
+97.5% -0.034 -0.012
+      0      1
+2.5%  0 -0.026
+97.5% 0  0.063
