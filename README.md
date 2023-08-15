@@ -3,20 +3,20 @@
 Code for the paper:
 
 Shpitser, Ilya, Zach Wood-Doughty, and Eric J. Tchetgen Tchetgen. "The proximal
-ID algorithm." arXiv:2108.06818 (2021).
+ID algorithm." *Journal of Machine Learning Research* 24.188 (2023): 1-46.
 
 If you use this code in published work, please cite the paper as:
 
 ```
-@article{shpitser2023proximal,
-  title={The Proximal ID Algorithm},
-  author={Shpitser, Ilya and Wood-Doughty, Zach and Tchetgen Tchetgen, Eric},
-  journal={Journal of Machine Learning Research},
-  volume={23},
-  number={},
-  pages={1--46},
-  year={2023},
-  publisher={JMLR}
+@article{JMLR:v24:21-0950,
+  author  = {Ilya Shpitser and Zach Wood-Doughty and Eric J. Tchetgen Tchetgen},
+  title   = {The Proximal ID Algorithm},
+  journal = {Journal of Machine Learning Research},
+  year    = {2023},
+  volume  = {24},
+  number  = {188},
+  pages   = {1--46},
+  url     = {http://jmlr.org/papers/v24/21-0950.html}
 }
 ```
 
